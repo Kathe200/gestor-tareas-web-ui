@@ -1,0 +1,42 @@
+<div class="contenedor">
+    <div class="card">
+        <div class="card-header">
+            <h1>Mi gestor de tareas</h1>
+        </div>
+        <div class="card-body">
+            <div>
+                <h4>Detalle de las tareas</h4>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Tarea</th>
+                            <th>Descripción</th>
+                            <th>Completada</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (tarea of tareas; track $index) {
+                        <tr>
+                            <td> {{ tarea.titulo }} </td>
+                            <td> {{ tarea.descripcion }}</td>
+                            <td> <input type="checkbox" name="checkbox" value=""/> </td>
+                            <td> <a (click)="abrirFormTareas(tarea)">Editar</a> </td>
+                            <td> <a (click)="eliminarTarea(tarea.id)">Eliminar</a> </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table> 
+            </div>
+            <div class="contenedorNuevaTarea">
+                @if (botonNuevaTarea) {
+                    <app-form-tarea [edicion]="esEdicion" [tarea]="tareaSeleccionada" (tareaCreada)="guardarTarea($event)"></app-form-tarea>
+                }  
+            </div>
+            <div class="contenedorBoton">
+                <button name="boton" class="boton" (click)="abrirFormTareas()">Nueva Tarea</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="contenedor">
+    <form (submit)="login()">
+        <h1>Login</h1>
+
+        <div *ngIf="hayError()" class="error">{{ mensajeError }}</div>
+  
+        <div class="input-login">
+            <input [(ngModel)]="usuario.nombreUsuario" name="usuario" placeholder="Usuario" >
+            <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-login">
+            <input type="password" [(ngModel)]="usuario.contrasena" name="contrasena" placeholder="Contraseña">
+            <i class="bx bxs-lock-alt"></i>
+        </div>
+        <input class="boton" type="submit" value="Ingresar">
+    </form>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="formulario-nueva-tarea">
+    <h4>Nueva Tarea</h4>
+    <form (submit)="agregarActualizarTarea()" class="form">
+        <div class="input-container">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" [(ngModel)]="nuevaTarea.titulo" class="form-control" required>
+        </div>
+        <div class="input-container">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" [(ngModel)]="nuevaTarea.descripcion" class="form-control" required></textarea>
+        </div>
+        <button name="boton" type="submit" class="boton">{{ edicion ? 'Actualizar' : 'Agregar' }}</button>
+    </form>
+    <div *ngIf="hayError()" class="error">{{ mensajeError }}</div>
+</div>
