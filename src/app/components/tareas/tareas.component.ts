@@ -18,7 +18,7 @@ export class TareasComponent {
   botonNuevaTarea: boolean = false; 
   tareaSeleccionada!: Tarea;
   tareasSubscription!: Subscription;
-  esEdicion: boolean = false;  // Para alternar entre edición y nueva tarea
+  esEdicion: boolean = false; 
 
   constructor(private readonly tareaCrud: TareasCrudService) {}
 
@@ -34,11 +34,11 @@ export class TareasComponent {
     this.botonNuevaTarea = true; 
     
     if (tarea) {
-      this.esEdicion = true;  // Modo edición
+      this.esEdicion = true; 
       this.tareaSeleccionada = {...tarea}; 
     } else {
-      this.esEdicion = false;  // Modo nueva tarea
-      this.tareaSeleccionada = { id: 0, titulo: '', descripcion: '', completada: false };  // Resetear para nueva tarea
+      this.esEdicion = false;
+      this.tareaSeleccionada = { id: 0, titulo: '', descripcion: '', completada: false }; 
     }
   }
 
@@ -60,9 +60,9 @@ export class TareasComponent {
   }
 
   private resetearFormulario() {
-    this.botonNuevaTarea = false;  // Ocultar el formulario
-    this.esEdicion = false;  // Resetear el modo para futuras acciones
-    this.tareaSeleccionada = { id: 0, titulo: '', descripcion: '', completada: false };  // Resetear el modelo de tarea
+    this.botonNuevaTarea = false;  
+    this.esEdicion = false;  
+    this.tareaSeleccionada = { id: 0, titulo: '', descripcion: '', completada: false };
   }
 
   ngOnDestroy(): void {

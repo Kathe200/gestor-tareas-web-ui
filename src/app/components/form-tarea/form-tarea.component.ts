@@ -24,16 +24,16 @@ export class FormTareaComponent {
   }
 
   ngOnChanges() {
-    this.resetearFormulario(); // Resetear si la tarea de entrada cambia
+    this.resetearFormulario(); 
   }
 
   resetearFormulario() {
     if (this.tarea) {
-      this.nuevaTarea = { ...this.tarea };  // Cargar los datos de la tarea si existe
+      this.nuevaTarea = { ...this.tarea };  
     } else {
-      this.nuevaTarea = { id: 0, titulo: '', descripcion: '', completada: false };  // Resetear para nueva tarea
+      this.nuevaTarea = { id: 0, titulo: '', descripcion: '', completada: false };  
     }
-    this.mensajeError = null; // Limpiar mensaje de error
+    this.mensajeError = null; 
   }
 
   agregarActualizarTarea() {
@@ -42,7 +42,7 @@ export class FormTareaComponent {
         this.nuevaTarea = {id: 0, titulo: '', descripcion: '', completada: false }; 
         this.mensajeError = null;
     } else {
-      this.mensajeError = 'Los campos de usuario y contraseña son obligatorios.';
+      this.mensajeError = 'Los campos de titulo y descripción de la tarea son obligatorios.';
     }
   }
 

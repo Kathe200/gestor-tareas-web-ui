@@ -11,7 +11,7 @@ export const autenticacionGuard: CanActivateFn = (route, state) => {
     } else {
       const router = inject(Router);
       router.navigate(['/login']);
-      return false; // Bloquear acceso
+      return false; 
     }
 
 };

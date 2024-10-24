@@ -30,7 +30,7 @@ export class AutenticacionComponent {
     if (this.autenticar.ingresar(this.usuario)) {
       this.router.navigate(['/tareas']);      
     } else {
-      this.mensajeError = 'Usuario o contraseña incorrectos. Por favor intente de nuevo o reasigne';
+      this.mensajeError = 'Usuario o contraseña incorrectos. Por favor intente de nuevo o reasigne.';
     }
   }
 

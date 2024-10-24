@@ -1,5 +1,5 @@
 <div class="formulario-nueva-tarea">
-    <h4>Nueva Tarea</h4>
+    <h4>{{ edicion ? 'Editar Tarea' : 'Nueva Tarea' }}</h4>
     <form (submit)="agregarActualizarTarea()" class="form">
         <div class="input-container">
             <label for="titulo">Título:</label>
